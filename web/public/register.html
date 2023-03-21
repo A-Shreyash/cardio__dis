@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./register.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>Cardiovascular Disease Predictior</title>
+</head>
+<body>
+    <section>
+        <img src="./hdp.png" alt="Langing image" width="250" height="90">
+    </section>
+    <section>
+        <img src="./doct..png" alt="Langing image" width="650" height="660">
+    </section>
+    <div class="login">
+        <h1>Cardiovascular Disease Predictior</h1>
+  <form action="{% url 'predict:predicter' %}"method="post">
+    
+  <input type="number" name="age" placeholder="Age" required="required" />
+  <input type="number" name="sex" placeholder="Sex(1/0)" required="required" />
+  <input type="number" name="cp" placeholder="Chest Pain(0/1)" required="required" />
+  <input type="number" name="trestbps" placeholder="Rest blood pressure" required="required" />
+  <input type="number" name="chol" placeholder="Cholestrol" required="required" />
+  <input type="number" name="fbs" placeholder="Fasting blood sugar" required="required" />
+  <input type="number" name="restecg" placeholder="Rest ECG result" required="required" />
+  <input type="number" name="thalach" placeholder="Maximum heart rate" required="required" />
+  <input type="number" name="exang" placeholder="Exercise induced angina" required="required" />
+  <input type="number" name="oldpeak" placeholder="ST depression induced by exercise relative to rest" step="any" required="required" />
+  <input type="number" name="slope" placeholder="the slope of the peak exercise ST segment" required="required" />
+  <input type="number" name="ca" placeholder="Number of major vessels (0-3) colored by flourosopy" required="required" />
+  <input type="number" name="thal" placeholder="Minimum Heart Rate" required="required" />
+  
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+  </form>
+  
+  
+</div>
+</body>
+<section class="top">
+    <img src="./heart.gif" alt="Langing image">
+</section>
+</html>
+
