@@ -13,11 +13,11 @@ exports.form = (req, res) =>
     res.sendFile('public/register.html', { root: '.' })
 } 
 
-exports.approved = (req, res) =>
+exports.predicted = (req, res) =>
 {  
     res.sendFile('public/predicted.html', { root: '.' })
 } 
-exports.napproved = (req, res) =>
+exports.notpredicted = (req, res) =>
 {  
     res.sendFile('public/notpredicted.html', { root: '.' })
 } 
@@ -38,30 +38,22 @@ exports.formprocess = async(req, res) =>
 
 const data = {
     
-    // NPPM:req.body.nppm,
-    // LoanStatus:req.body.ls,
-    // Objective:req.body.objective,
-    // Amount:req.body.amount,
-    // Guarantee:req.body.guarantor,
-    // Experience: req.body.experience,
-    // M_Status:req.body.maritalStatus,
-    // ExistingLoan:req.body.existingLoan,
-    // Age:req.body.age,
-    // CA_Balance:req.body.ca_balance,
-    // SA_Balance:req.body.sa_balance,
-    // PI_Balance:req.body.pi,
-    // WorkAB:req.body.workab,
-    // PhNum:req.body.phn,
-    // Tenure:req.body.tenure,
-    // prop:req.body.prop,
-    // JobTyp:req.body.jobType,
-    // HouseT:req.body.houset,
-    // NOE:req.body.noe,
-
-
+    age:req.body.age,
+    sex:req.body.sex,
+    cp:req.body.cp,
+    trestbps:req.body.trestbps,
+    chol:req.body.chol,
+    fbs: req.body.fbs,
+    restecg:req.body.restecg,
+    thalach:req.body.thalach,
+    exang:req.body.exang,
+    oldpeak:req.body.oldpeak,
+    slope:req.body.slope,
+    ca:req.body.ca,
+    thal:req.body.thal,
 }
 console.log(data);
- const obj = await axios.post("https://mlapi-yigp.onrender.com/predict" ,JSON.stringify(data),
+ const obj = await axios.post("https://card-d.onrender.com/target" ,JSON.stringify(data),
  {
     headers: {
     'Content-Type': 'application/json'
@@ -72,7 +64,7 @@ console.log(data);
 })
 
 console.log(obj)
-if(obj === "predicted"){
+if(obj === "detected"){
     res.sendFile('public/predicted.html', { root: '.' });
 
 }
