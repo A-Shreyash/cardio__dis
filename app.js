@@ -1,6 +1,6 @@
 /// entry point for our application
 const express = require('express');
-const routes = require('./routes/routing');
+const routes = require('./route/routing');
 
 // body-parser module is responsible for parsing the incoming request body in a middleware.
 const bodyParser = require('body-parser');
